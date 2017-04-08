@@ -136,8 +136,17 @@ textarea {
        border-bottom: 1px dotted #444;
    }
 
-   .links-list .link-item .link:hover{
+   .links-list .link-item .link:hover, .links-list .link-item .link:focus{
    border-bottom: 1px dotted #FFF;
+   position: relative;
+   }
+
+   .link-item .link:hover::before,  .link-item .link:focus::before{
+     content: ">>";
+     position: absolute;
+     left: -15px;
+     top: 3px;
+     font-size: 11px;
    }
 
    .main-content .panel{
@@ -178,27 +187,27 @@ textarea {
 
     }
 
-    .main-content .panel:hover{
+    .main-content .panel:hover, .main-content .panel-link:focus{
       transition: .45s;
       transform: scale(1.1);
     }
-   .facebook:hover{
+   .facebook:hover, .panel-link:focus .facebook{
      background-color: rgba(59, 89, 152, 0.8);
    }
 
-   .gmail:hover, .youtube:hover{
+   .gmail:hover, .youtube:hover, .panel-link:focus .gmail, .panel-link:focus .youtube{
      background-color: rgba(221, 75, 57, 0.8)
    }
 
-   .librus:hover{
+   .librus:hover, .panel-link:focus .librus{
      background-color: rgba(196, 213, 142, 0.8);
    }
 
-   .forum:hover{
+   .forum:hover, .panel-link:focus .forum{
      background-color: rgba(52,152,219, 0.8);
    }
 
-   .empty:hover{
+   .empty:hover, .panel-link:focus .empty{
      background-color: rgba(128,128,128,0.8);
    }
 
